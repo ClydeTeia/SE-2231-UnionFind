@@ -1,10 +1,8 @@
 import readline from 'readline-sync';
-import { QuickFindUF } from './quickFindUF';
-
-console.log('hi!');
+import { QuickUnionUF } from './quickUnionUF';
 
 let N = readline.questionInt();
-let uf = new QuickFindUF(N);
+let uf = new QuickUnionUF(N);
 let input = readline.question();
 
 while (input !== '') {

@@ -1,11 +1,9 @@
 import readline from 'readline-sync';
-import { QuickFindUF } from './quickFindUF';
+import { WeightedQuickUnion } from './weightedQuickUnionUF';
 
-console.log('hi!');
-
-let N = readline.questionInt();
-let uf = new QuickFindUF(N);
-let input = readline.question();
+let N = readline.questionInt('input initial number of elements: ');
+let uf = new WeightedQuickUnion(N);
+let input = readline.question("input two numbers you'd like to connect: ");
 
 while (input !== '') {
   let p = parseInt(input.split(' ')[0]);
@@ -17,6 +15,7 @@ while (input !== '') {
   }
 
   console.log(uf.ids);
+  console.log(uf.sz);
 
   input = readline.question();
 }
